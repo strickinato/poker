@@ -13,4 +13,10 @@ describe 'array_methods' do
       expect([-1,0,2,-2,1].two_sum).to eq([[0,4],[2,3]])
     end
   end
+  
+  describe "#stock_picker" do
+    it "should return the most profitable days to buy and then sell" do
+      expect([5, 4, 3, 2, 6, 1].stock_picker).to eq([3, 4])
+    end
+  end  
 end

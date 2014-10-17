@@ -19,4 +19,18 @@ class Array
     
     all_pairs.select { |i, j| self[i] + self[j] == 0 }
   end
+
+  def stock_picker
+    best_pair = []
+    best_value = 0
+    (0...self.length).each do |buy| 
+      (buy + 1...self.length).each do |sell|
+        best_pair = [buy, sell] if self[sell] - self[buy] > best_value
+      end
+    end
+  
+    best_pair
+  end
+  
 end
+
